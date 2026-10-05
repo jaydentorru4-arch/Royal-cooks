@@ -1,0 +1,6 @@
+{
+  "name": "Royal Cooks - Luxury Intercontinental Catering",
+  "description": "Where Every Plate Tells a Story. Exceptional intercontinental catering crafted with passion and served with elegance for weddings, corporate galas, and bespoke events.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

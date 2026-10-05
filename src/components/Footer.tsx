@@ -1,0 +1,138 @@
+import React from 'react';
+import { MessageSquare } from 'lucide-react';
+import { RoyalCooksLogo } from './RoyalCooksLogo';
+import { WHATSAPP_BASE_URL } from '../data/cateringData';
+
+export const Footer: React.FC = () => {
+  return (
+    <footer className="relative bg-[#050505] text-[#FFF8E7] border-t border-neutral-800 pt-16 pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 mb-14">
+          {/* Col 1 & 2: Brand Lockup & Simple Bio */}
+          <div className="lg:col-span-2 space-y-4">
+            <RoyalCooksLogo size="md" />
+            <p className="font-serif-lux italic text-lg text-[#D4AF37]">
+              “Where Every Plate Tells a Story.”
+            </p>
+            <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-sm">
+              Royal Cooks provides reliable, delicious catering for weddings, birthdays, and events. We cook fresh African, European, Asian, and American dishes your guests will love.
+            </p>
+
+            <div className="pt-1">
+              <a
+                href={WHATSAPP_BASE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#FFF8E7] transition-colors shadow-sm"
+              >
+                <MessageSquare className="w-3.5 h-3.5" />
+                <span>Chat on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Col 3: Quick Navigation */}
+          <div>
+            <h4 className="font-display text-sm font-bold uppercase tracking-wider text-[#D4AF37] mb-3">
+              Navigation
+            </h4>
+            <ul className="space-y-2 text-xs text-neutral-400">
+              <li>
+                <a href="#home" className="hover:text-[#D4AF37] transition-colors">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#about" className="hover:text-[#D4AF37] transition-colors">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#menus" className="hover:text-[#D4AF37] transition-colors">
+                  Menu Plans
+                </a>
+              </li>
+              <li>
+                <a href="#cuisines" className="hover:text-[#D4AF37] transition-colors">
+                  World Cuisines
+                </a>
+              </li>
+              <li>
+                <a href="#dishes" className="hover:text-[#D4AF37] transition-colors">
+                  Popular Dishes
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-[#D4AF37] transition-colors">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="#gallery" className="hover:text-[#D4AF37] transition-colors">
+                  Event Photos
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-[#D4AF37] transition-colors">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 4: Cuisines */}
+          <div>
+            <h4 className="font-display text-sm font-bold uppercase tracking-wider text-[#D4AF37] mb-3">
+              Cuisines We Cook
+            </h4>
+            <ul className="space-y-2 text-xs text-neutral-400">
+              <li>Nigerian Party Jollof & Suya</li>
+              <li>West African Dishes & Waakye</li>
+              <li>Asian Noodles & Stir-Fries</li>
+              <li>Middle Eastern Grills & Kebabs</li>
+              <li>Spanish Seafood Paella</li>
+              <li>Italian Pastas & Meat Dishes</li>
+              <li>American Smoked BBQ & Mac</li>
+            </ul>
+          </div>
+
+          {/* Col 5: Direct Contact */}
+          <div>
+            <h4 className="font-display text-sm font-bold uppercase tracking-wider text-[#D4AF37] mb-3">
+              Book Your Date
+            </h4>
+            <ul className="space-y-2.5 text-xs text-neutral-400">
+              <li>
+                <span className="text-neutral-500 block uppercase tracking-wider text-[10px]">WhatsApp:</span>
+                <a
+                  href={WHATSAPP_BASE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#D4AF37] hover:underline"
+                >
+                  {WHATSAPP_BASE_URL}
+                </a>
+              </li>
+              <li>
+                <span className="text-neutral-500 block uppercase tracking-wider text-[10px]">Available:</span>
+                <span className="text-neutral-300">7 Days a Week for Inquiries</span>
+              </li>
+              <li>
+                <span className="text-neutral-500 block uppercase tracking-wider text-[10px]">Catering Service:</span>
+                <span className="text-neutral-300">Fresh food delivered and served hot</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-6 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-500">
+          <p>© {new Date().getFullYear()} Royal Cooks. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <span className="text-neutral-400">Fresh Food from Around the World</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
