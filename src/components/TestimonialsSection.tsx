@@ -1,10 +1,10 @@
 import React from 'react';
-import { Quote } from 'lucide-react';
-import { TESTIMONIALS } from '../data/cateringData';
+import { Quote, MessageSquarePlus } from 'lucide-react';
+import { TESTIMONIALS, getWhatsAppLink } from '../data/cateringData';
 
 export const TestimonialsSection: React.FC = () => {
   return (
-    <section className="py-16 sm:py-24 bg-[#080808] text-[#FFF8E7]">
+    <section id="reviews" className="py-16 sm:py-24 bg-[#080808] text-[#FFF8E7]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-xl mx-auto mb-10">
           <span className="text-xs uppercase tracking-wider font-semibold text-[#D4AF37] block mb-1">
@@ -18,7 +18,7 @@ export const TestimonialsSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {TESTIMONIALS.map((t) => (
             <div
               key={t.id}
@@ -41,6 +41,19 @@ export const TestimonialsSection: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Link to Leave a Review */}
+        <div className="text-center pt-2">
+          <a
+            href={getWhatsAppLink("Hello Royal Cooks! I would like to leave a review for your catering service:")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold tracking-wider uppercase text-[#D4AF37] hover:text-black bg-[#141414] hover:bg-[#D4AF37] border border-[#D4AF37]/40 hover:border-[#D4AF37] rounded-lg transition-colors shadow-sm"
+          >
+            <MessageSquarePlus className="w-4 h-4" />
+            <span>Leave a Review</span>
+          </a>
         </div>
       </div>
     </section>
