@@ -10,7 +10,14 @@ import grilledFishImg from '../assets/images/cuisine_grilled_fish_1791220585757.
 import asianWokImg from '../assets/images/cuisine_asian_continental_1791220596513.jpg';
 import dessertPastriesImg from '../assets/images/dessert_pastries_luxury_1791220607071.jpg';
 
-export const WHATSAPP_BASE_URL = 'https://wa.me/PHONE_NUMBER';
+export const PHONE_NUMBER_DISPLAY = '+44 7435 023847';
+export const PHONE_NUMBER_TEL = 'tel:+447435023847';
+export const WHATSAPP_BASE_URL = 'https://wa.me/447435023847';
+export const AUTHOR_PROJECTS_URL = 'https://github.com/jaydentorru4-arch';
+export const AUTHOR_PROJECTS = [
+  { name: 'Nel Scout', url: 'https://nelscout.vercel.app/' },
+  { name: 'Airplane Simulator', url: 'https://nel-jayden.vercel.app/' },
+];
 
 export const getWhatsAppLink = (customMessage?: string) => {
   if (!customMessage) return WHATSAPP_BASE_URL;

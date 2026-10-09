@@ -1,11 +1,17 @@
 import React from 'react';
-import { MessageSquare } from 'lucide-react';
+import { MessageSquare, Phone, ArrowUpRight } from 'lucide-react';
 import { RoyalCooksLogo } from './RoyalCooksLogo';
-import { WHATSAPP_BASE_URL, getWhatsAppLink } from '../data/cateringData';
+import {
+  WHATSAPP_BASE_URL,
+  PHONE_NUMBER_DISPLAY,
+  PHONE_NUMBER_TEL,
+  AUTHOR_PROJECTS,
+  getWhatsAppLink,
+} from '../data/cateringData';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="relative bg-[#050505] text-[#FFF8E7] border-t border-neutral-800 pt-16 pb-12">
+    <footer className="relative bg-[#050505] text-[#FFF8E7] border-t border-neutral-800 pt-16 pb-28 sm:pb-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 mb-14">
           {/* Col 1 & 2: Brand Lockup & Simple Bio */}
@@ -30,12 +36,11 @@ export const Footer: React.FC = () => {
               </a>
 
               <a
-                href={getWhatsAppLink("Hello Royal Cooks! I would like to leave a review for your catering service:")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider text-[#D4AF37] hover:text-black bg-[#141414] hover:bg-[#D4AF37] border border-[#D4AF37]/30 hover:border-[#D4AF37] transition-colors"
+                href={PHONE_NUMBER_TEL}
+                className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider text-[#D4AF37] hover:text-black bg-[#141414] hover:bg-[#D4AF37] border border-[#D4AF37]/30 hover:border-[#D4AF37] transition-colors"
               >
-                <span>Leave a Review</span>
+                <Phone className="w-3.5 h-3.5" />
+                <span>{PHONE_NUMBER_DISPLAY}</span>
               </a>
             </div>
           </div>
@@ -108,22 +113,20 @@ export const Footer: React.FC = () => {
           {/* Col 5: Direct Contact */}
           <div>
             <h4 className="font-display text-sm font-bold uppercase tracking-wider text-[#D4AF37] mb-3">
-              Book Your Date
+              Direct Contact
             </h4>
             <ul className="space-y-2.5 text-xs text-neutral-400">
               <li>
-                <span className="text-neutral-500 block uppercase tracking-wider text-[10px]">WhatsApp:</span>
+                <span className="text-neutral-500 block uppercase tracking-wider text-[10px]">Call or WhatsApp:</span>
                 <a
-                  href={WHATSAPP_BASE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#D4AF37] hover:underline"
+                  href={PHONE_NUMBER_TEL}
+                  className="text-[#D4AF37] hover:underline font-semibold tracking-wide text-sm block mt-0.5"
                 >
-                  {WHATSAPP_BASE_URL}
+                  {PHONE_NUMBER_DISPLAY}
                 </a>
               </li>
               <li>
-                <span className="text-neutral-500 block uppercase tracking-wider text-[10px]">Available:</span>
+                <span className="text-neutral-500 block uppercase tracking-wider text-[10px]">Availability:</span>
                 <span className="text-neutral-300">7 Days a Week for Inquiries</span>
               </li>
               <li>
@@ -141,10 +144,11 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Bar: Copyright & Author attribution */}
-        <div className="pt-6 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-500">
+        {/* Bottom Bar: Copyright, Specific Project Hyperlinks, & Author Attribution */}
+        <div className="pt-6 border-t border-neutral-900 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
           <p>© {new Date().getFullYear()} Royal Cooks. All rights reserved.</p>
-          <div className="flex items-center gap-3">
+
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pr-0 sm:pr-28 md:pr-36">
             <a
               href={getWhatsAppLink("Hello Royal Cooks! I would like to leave a review for your catering service:")}
               target="_blank"
@@ -154,6 +158,20 @@ export const Footer: React.FC = () => {
               Leave a Review
             </a>
             <span className="text-neutral-700">·</span>
+            {AUTHOR_PROJECTS.map((proj) => (
+              <React.Fragment key={proj.name}>
+                <a
+                  href={proj.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[#D4AF37] hover:underline font-medium transition-colors"
+                >
+                  <span>{proj.name}</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+                <span className="text-neutral-700">·</span>
+              </React.Fragment>
+            ))}
             <span className="text-neutral-400">
               Author: <span className="text-[#D4AF37] font-semibold">Nel-Jayden</span>
             </span>

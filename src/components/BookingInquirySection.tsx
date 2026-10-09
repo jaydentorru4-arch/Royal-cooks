@@ -9,7 +9,7 @@ import {
   ChevronDown,
   ArrowUpRight
 } from 'lucide-react';
-import { FAQS, WHATSAPP_BASE_URL, getWhatsAppLink } from '../data/cateringData';
+import { FAQS, WHATSAPP_BASE_URL, PHONE_NUMBER_DISPLAY, PHONE_NUMBER_TEL, getWhatsAppLink } from '../data/cateringData';
 
 export const BookingInquirySection: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -122,10 +122,13 @@ Please let me know the price and if you are available. Thank you!`;
                 <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
               </a>
 
-              <div className="mt-3 text-center">
-                <span className="text-xs text-neutral-400">
-                  Official WhatsApp: <code className="text-[#D4AF37]">{WHATSAPP_BASE_URL}</code>
-                </span>
+              <div className="mt-3 text-center space-y-1">
+                <div className="text-xs text-neutral-300">
+                  Call or WhatsApp:{' '}
+                  <a href={PHONE_NUMBER_TEL} className="text-[#D4AF37] hover:underline font-semibold tracking-wider">
+                    {PHONE_NUMBER_DISPLAY}
+                  </a>
+                </div>
               </div>
             </div>
 
